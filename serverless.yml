@@ -4,7 +4,7 @@ custom:
   # Our stage is based on what is passed in when running serverless
   # commands. Or falls back to what we have set in the provider section.
   stage: ${opt:stage, 'offline'}
-  region: ${opt:region, 'us-east-1'}
+  region: ${opt:region, 'ap-south-1'}
   bundle:
     linting: false
   serverless-offline:
@@ -16,19 +16,10 @@ provider:
   memorySize: 512
   timeout: 10
   logRetentionInDays: 90
-  lambdaHashingVersion: 20201221 # https://www.serverless.com/framework/docs/deprecations/#LAMBDA_HASHING_VERSION_V2
   logs:
     httpApi: true
   httpApi:
-    cors:
-      allowedOrigins:
-        - '*'
-      allowedHeaders:
-        - Content-Type
-        - Authorization
-      allowedMethods:
-        - OPTIONS
-        - GET
+    cors: true
 
 functions:
   app:
