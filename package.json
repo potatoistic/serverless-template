@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "express": "^4.17.2",
+    "helmet": "^5.0.2",
     "serverless-http": "^2.7.0"
   },
   "author": "dhruvsaxena <https://github.com/dhruvsaxena1998>"

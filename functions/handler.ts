@@ -1,12 +1,19 @@
 import express, { json, urlencoded } from 'express';
+import helmet from 'helmet';
 import serverless from 'serverless-http';
 
 const app = express();
 
+app.use(helmet());
+
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
-app.get('/hello', (_, res) => {
+/**
+ * @route GET /hello
+ * @description Returns hello world
+ */
+app.get('/hello', (_, res: express.Response) => {
   res.json({
     message: 'Hello World',
   });
