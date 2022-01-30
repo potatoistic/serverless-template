@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Serverless template",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development sls offline start --stage offline",
-    "deploy-prod": "cross-env NODE_ENV=production sls deploy --stage production",
-    "deploy-function": "cross-env NODE_ENV=production sls deploy function --stage production --function",
-    "remove-prod": "sls remove --stage production",
+    "dev": "cross-env NODE_ENV=development sls dev start --stage dev",
+    "deploy-prod": "cross-env NODE_ENV=production sls deploy --stage prod",
+    "deploy-function": "cross-env NODE_ENV=production sls deploy function --stage prod --function",
+    "remove-prod": "sls remove --stage prod",
     "build-types": "tsc --noEmit --pretty"
   },
   "devDependencies": {

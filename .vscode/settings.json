@@ -1,0 +1,7 @@
+{
+  "editor.tabSize": 2,
+  "search.exclude": {
+    "package-lock.json": true
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+}

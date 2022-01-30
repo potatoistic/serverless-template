@@ -1,9 +1,7 @@
 service: serverless-template
 
 custom:
-  # Our stage is based on what is passed in when running serverless
-  # commands. Or falls back to what we have set in the provider section.
-  stage: ${opt:stage, 'offline'}
+  stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'ap-south-1'}
   bundle:
     linting: false
