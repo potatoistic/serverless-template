@@ -15,7 +15,7 @@ $ npm run deploy-prod
 ```bash
 $ serverless deploy function --function functionName
 or
-$ npm run deploy-f functionName
+$ npm run deploy-function functionName
 ```
 
 ### Local development
