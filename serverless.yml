@@ -17,15 +17,20 @@ provider:
   logs:
     httpApi: true
   httpApi:
-    cors: true
+    cors:
+      allowedOrigins: '*'
+      allowedHeaders: '*'
+      allowedMethods:
+        - GET
+        - OPTIONS
 
 functions:
   app:
     handler: functions/handler.hello
     events:
       - httpApi:
-          path: "/hello"
-          method: "GET"
+          path: '/hello'
+          method: 'GET'
 
 package:
   individually: true

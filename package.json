@@ -1,9 +1,9 @@
 {
-  "name": "sls-template",
+  "name": "serverless-template",
   "version": "1.0.0",
   "description": "Serverless template",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development sls dev start --stage dev",
+    "dev": "cross-env NODE_ENV=development sls offline start --stage dev",
     "deploy-prod": "cross-env NODE_ENV=production sls deploy --stage prod",
     "deploy-function": "cross-env NODE_ENV=production sls deploy function --stage prod --function",
     "remove-prod": "sls remove --stage prod",

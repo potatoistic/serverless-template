@@ -1,11 +1,9 @@
 import express, { json, urlencoded } from 'express';
-import cors from 'cors';
 import helmet from 'helmet';
 import serverless from 'serverless-http';
 
 const app = express();
 
-app.use(cors());
 app.use(helmet());
 
 app.use(json());
