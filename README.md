@@ -27,3 +27,9 @@ $ serverless offline start
 or
 $ npm run dev
 ```
+
+## Author
+
+- [dhruvsaxena1998](https://github.com/dhruvsaxena1998)
+
+Repository inspired from [serverless-boilerplate-express-typescript](https://github.com/ixartz/Serverless-Boilerplate-Express-TypeScript)
