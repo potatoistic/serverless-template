@@ -1,5 +1,5 @@
 {
-  "name": "serverless-template",
+  "name": "template-serverless",
   "version": "1.0.0",
   "description": "Serverless template",
   "scripts": {
