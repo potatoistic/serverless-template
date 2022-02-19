@@ -1,22 +1,25 @@
-import express, { json, urlencoded } from 'express';
-import helmet from 'helmet';
-import serverless from 'serverless-http';
+import fastify, { FastifyInstance } from 'fastify';
+import helmet from 'fastify-helmet'
+import proxy from 'aws-lambda-fastify';
 
-const app = express();
+const app = (): FastifyInstance => {
+  const instance = fastify({ logger: process.env.NODE_ENV === 'development' });
 
-app.use(helmet());
+  instance.register(helmet);
 
-app.use(json());
-app.use(urlencoded({ extended: true }));
-
-/**
- * @route GET /hello
- * @description Returns hello world
- */
-app.get('/hello', (_, res: express.Response) => {
-  res.json({
-    message: 'Hello World',
+  instance.get('/hello', (_, reply) => {
+    reply.send({ message: 'Hello World' });
   });
-});
 
-export const hello = serverless(app);
+  return instance;
+};
+
+if (require.main === module) {
+  // called directly i.e. node-app
+  const port = process.env.PORT || 3000;
+  app().listen(port, (err) => {
+    if (!err) console.log('Server is up on port', +port);
+  });
+}
+
+export const hello = proxy(app());
